@@ -14,6 +14,7 @@ namespace Lambada
             Insert(listpersondetails);
             Console.WriteLine(listpersondetails);
             Get_person_Age_Below_60(listpersondetails);
+            Get_person_between_13_to_19(listpersondetails);
         }
         private static void Insert(List<Person> listpersondetails)
         {
@@ -33,6 +34,18 @@ namespace Lambada
                 Console.WriteLine("Name :" + person.Name + " \t\tAge: " + person.Age);
             }
 
+        }
+        // UC3 Get persons between 13 to 19
+        private static void Get_person_between_13_to_19(List<Person> listpersondetails)
+        {
+            if (listpersondetails.Any(e => (e.Age >= 13 && e.Age < 19)))
+            {
+                Console.WriteLine("we have persons betwen Age of 13 to 19");
+            }
+            else
+            {
+                Console.WriteLine("we dont have age between Age of 13 to 19");
+            }
         }
     }
 }
